@@ -1,9 +1,9 @@
 ---
 title: Bookings hooks
-description:  Overview of all the hooks associated with bookings.
+description: Overview of all the hooks associated with bookings.
 ---
 
-Optimize your development workflow using our custom hooks. Our custom hooks are designed to simplify the integration of the Cal.com API into your products. With these hooks, you can effortlessly manage state, handle side effects, and optimize performance, allowing you to focus on building exceptional user experiences without the hassle of complex API interactions. 
+Optimize your development workflow using our custom hooks. Our custom hooks are designed to simplify the integration of the Cal.com API into your products. With these hooks, you can effortlessly manage state, handle side effects, and optimize performance, allowing you to focus on building exceptional user experiences without the hassle of complex API interactions.
 
 Below is a list of hooks you can find that are associated with bookings. Notably, all of these hooks are available only for platform customers.
 
@@ -30,12 +30,14 @@ export default function Bookings() {
       {!isLoadingUpcomingBookings && !upcomingBookings && <p>No upcoming bookings found</p>}
       {!isLoading &&
         upcomingBookings &&
-        (Boolean(upcomingBookings?.length)) &&
+        Boolean(upcomingBookings?.length) &&
         [...upcomingBookings].map((booking) => {
-            return (
-                <div key={booking.id}><h1>{booking.title}</h1></div>
-            );
-       })}
+          return (
+            <div key={booking.id}>
+              <h1>{booking.title}</h1>
+            </div>
+          );
+        })}
     </>
   );
 }
@@ -43,7 +45,7 @@ export default function Bookings() {
 
 ### 2. get specific booking - `useBooking`
 
-The useBooking hook returns detailed information about a single booking. Simply provide the booking's unique identifier ***(bookingUid)*** as a parameter to fetch its associated data. 
+The useBooking hook returns detailed information about a single booking. Simply provide the booking's unique identifier **_(bookingUid)_** as a parameter to fetch its associated data.
 
 Below code snippet shows how to use the useBooking hook to fetch a specific booking for a user.
 
@@ -70,7 +72,7 @@ export default function Booking() {
 
 ### 3. cancel booking - `useCancelBooking`
 
-The useCancelBooking hook allows you to cancel a booking. This hook returns a mutation function that handles the cancellation process. To cancel a booking, you'll need to provide at least the booking's unique identifier ***(uid).*** While the uid is the only mandatory parameter, you can enhance the cancellation process by including optional parameters such as ***cancellationReason*** to specify why the booking is being canceled, and ***allRemainingBookings*** to specify whether to cancel all future recurring bookings.
+The useCancelBooking hook allows you to cancel a booking. This hook returns a mutation function that handles the cancellation process. To cancel a booking, you'll need to provide at least the booking's unique identifier **_(uid)._** While the uid is the only mandatory parameter, you can enhance the cancellation process by including optional parameters such as **_cancellationReason_** to specify why the booking is being canceled, and **_allRemainingBookings_** to specify whether to cancel all future recurring bookings.
 
 Below code snippet shows how to use the useCancelBooking hook to cancel a booking for a user.
 
@@ -78,20 +80,21 @@ Below code snippet shows how to use the useCancelBooking hook to cancel a bookin
 import { useCancelBooking } from "@calcom/atoms";
 
 export default function CancelBooking() {
-    const { mutate: cancelBooking } = useCancelBooking({
+  const { mutate: cancelBooking } = useCancelBooking({
     onSuccess: () => {
-      console.log("Booking canceled successfully!")
+      console.log("Booking canceled successfully!");
     },
   });
 
   return (
     <>
-      <button onClick={() => {
+      <button
+        onClick={() => {
           cancelBooking({
             uid: "6L6ADNpVHwLX25V8wXKsBr",
             cancellationReason: "User request",
             allRemainingBookings: true,
-          })
+          });
         }}>
         Cancel booking
       </button>
@@ -107,6 +110,7 @@ allows organization admins to fetch bookings of any organization member.
 
 The access token passed to the [\<CalProvider\>](https://cal.com/docs/platform/atoms/cal-provider) must belong
 to a managed user who is an organization admin. That means you have to create a managed user and then add an accepted membership with an admin or owner role by making a request to the [organizations memberships endpoint](https://cal.com/docs/api-reference/v2/orgs-memberships/create-a-membership). Example body:
+
 ```js
 {
   "userId": 1006,
@@ -114,6 +118,7 @@ to a managed user who is an organization admin. That means you have to create a 
   "role": "ADMIN"
 }
 ```
+
 then you have to pass the access token of this managed user to the [CalProvider](https://cal.com/docs/platform/atoms/cal-provider) to then finally be able to
 use the "useOrganizationUserBookings" by specifying "userId" which will return an array of that user's bookings. You can filter bookings by status, event type id, attendee email etc. - [see this class](https://github.com/calcom/cal.com/blob/307b2946a2cb6dcdb32dbee6c4f448e8a01c4285/packages/platform/types/bookings/2024-08-13/inputs/get-bookings.input.ts#L32) for filters you can pass to the hook.
 
@@ -125,11 +130,14 @@ import { useOrganizationUserBookings } from "@calcom/atoms";
 export default function Bookings() {
   const someUserId = 1218;
 
-  const { isLoading: isLoadingUpcomingBookings, data: upcomingBookings } = useOrganizationUserBookings(someUserId, {
-    take: 50,
-    skip: 0,
-    status: ["upcoming"],
-  });
+  const { isLoading: isLoadingUpcomingBookings, data: upcomingBookings } = useOrganizationUserBookings(
+    someUserId,
+    {
+      take: 50,
+      skip: 0,
+      status: ["upcoming"],
+    }
+  );
 
   return (
     <>
@@ -138,12 +146,14 @@ export default function Bookings() {
       {!isLoadingUpcomingBookings && !upcomingBookings && <p>No upcoming bookings found</p>}
       {!isLoading &&
         upcomingBookings &&
-        (Boolean(upcomingBookings?.length)) &&
+        Boolean(upcomingBookings?.length) &&
         [...upcomingBookings].map((booking) => {
-            return (
-                <div key={booking.id}><h1>{booking.title}</h1></div>
-            );
-       })}
+          return (
+            <div key={booking.id}>
+              <h1>{booking.title}</h1>
+            </div>
+          );
+        })}
     </>
   );
 }
@@ -156,6 +166,7 @@ allows organization admins to fetch bookings of the whole organization.
 
 The access token passed to the [\<CalProvider\>](https://cal.com/docs/platform/atoms/cal-provider) must belong
 to a managed user who is an organization admin. That means you have to create a managed user and then add an accepted membership with an admin or owner role by making a request to the [organizations memberships endpoint](https://cal.com/docs/api-reference/v2/orgs-memberships/create-a-membership). Example body:
+
 ```js
 {
   "userId": 1006,
@@ -163,6 +174,7 @@ to a managed user who is an organization admin. That means you have to create a 
   "role": "ADMIN"
 }
 ```
+
 then you have to pass the access token of this managed user to the [CalProvider](https://cal.com/docs/platform/atoms/cal-provider) to then finally be able to
 use the "useOrganizationBookings" which will return an array of organization bookings. You can filter bookings by status, user ids, event type ids, attendee email etc. - [see this class](https://github.com/calcom/cal.com/blob/307b2946a2cb6dcdb32dbee6c4f448e8a01c4285/packages/platform/types/bookings/2024-08-13/inputs/get-bookings.input.ts#L32) for filters you can pass to the hook + you can use "userIds" filter like in example below.
 
@@ -185,12 +197,14 @@ export default function Bookings() {
       {!isLoadingUpcomingBookings && !upcomingBookings && <p>No upcoming bookings found</p>}
       {!isLoading &&
         upcomingBookings &&
-        (Boolean(upcomingBookings?.length)) &&
+        Boolean(upcomingBookings?.length) &&
         [...upcomingBookings].map((booking) => {
-            return (
-                <div key={booking.id}><h1>{booking.title}</h1></div>
-            );
-       })}
+          return (
+            <div key={booking.id}>
+              <h1>{booking.title}</h1>
+            </div>
+          );
+        })}
     </>
   );
 }

@@ -2,41 +2,44 @@
 title: Alert
 airtableId: recnvwaXqOucqLo9Y
 ---
-import { Alert } from "@calcom/ui/components/alert"
-import { RenderComponentWithSnippet } from "@/app/components/render"
-import { Row } from "@/app/components/row"
-import { BasicExample } from "./alert.basic"
-import { ActionsExample } from "./alert.actions"
-import { CustomIconsExample } from "./alert.customIcons"
-import { CustomIconColorExample } from "./alert.customIconColor"
-import { NoTitleExample } from "./alert.noTitle"
+
+import { RenderComponentWithSnippet } from "@/app/components/render";
+import { Row } from "@/app/components/row";
+
+import { Alert } from "@calcom/ui/components/alert";
+
+import { ActionsExample } from "./alert.actions";
+import { BasicExample } from "./alert.basic";
+import { CustomIconColorExample } from "./alert.customIconColor";
+import { CustomIconsExample } from "./alert.customIcons";
+import { NoTitleExample } from "./alert.noTitle";
 
 ## Basic Alerts
 
 Alerts come in different severities to convey different levels of importance.
 
-<BasicExample/>
+<BasicExample />
 
 ## Alerts with Actions
 
 Alerts can include action buttons to provide users with immediate options.
 
-<ActionsExample/>
+<ActionsExample />
 
 ## Custom Icons
 
 You can customize the alert icon to better match your message context.
 
-<CustomIconsExample/>
+<CustomIconsExample />
 
 ## Custom Icon Colors
 
 The icon color can be customized independently of the alert severity.
 
-<CustomIconColorExample/>
+<CustomIconColorExample />
 
 ## Without Title
 
 For simpler messages, alerts can be displayed without a title.
 
-<NoTitleExample/>
+<NoTitleExample />

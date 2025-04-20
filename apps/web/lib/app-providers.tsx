@@ -116,7 +116,15 @@ const CustomI18nextProvider = (props: AppPropsWithoutNonce) => {
   }, [locale]);
 
   const clientViewerI18n = useViewerI18n(locale);
-  const i18n = clientViewerI18n.data?.i18n ?? props.pageProps.i18n;
+  const i18n = clientViewerI18n.data?.i18n ??
+    props.pageProps.i18n ?? {
+      _nextI18Next: {
+        initialI18nStore: {},
+        initialLocale: "en",
+        ns: [],
+        userConfig: null,
+      },
+    };
 
   const passedProps = {
     ...props,

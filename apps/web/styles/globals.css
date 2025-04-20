@@ -4,6 +4,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
+
 /**
 * Add css variables here as well for light mode in addition to tailwind.config to avoid FOUC
 */
@@ -269,6 +272,8 @@
 body  {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.2em;
 }
 
 /*

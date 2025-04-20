@@ -20,6 +20,7 @@ To publish the packages. Following steps should be followed. All commands are to
 
 Skeleton loader is shown for supported page types. For all other page types, default non-skeleton loader is shown.
 Status:
+
 - Layout
   - [x] Responsive
   - [x] Mobile Layout
@@ -28,7 +29,7 @@ Status:
   - [ ] column_view Layout
 - Theming
   - [x] Dark and Light theme
-      NOTE: _If user has preference for theme configured within app, that has to be communicated clearly in the embed too for skeleton to work_
+        NOTE: _If user has preference for theme configured within app, that has to be communicated clearly in the embed too for skeleton to work_
   - [x] Change in system theme should reflect without page refresh
 - Page Types supported
   - [x] user.event.booking.slots

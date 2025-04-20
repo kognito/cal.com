@@ -3,7 +3,7 @@ title: Shadows
 description: Cal.com's shadow system for depth and elevation
 ---
 
-import { ShadowTable } from '@/components/ui/ShadowTable';
+import { ShadowTable } from "@/components/ui/ShadowTable";
 
 # Shadows
 
@@ -12,11 +12,13 @@ Our shadow system is designed to create visual hierarchy and depth in the interf
 ## Shadow Categories
 
 ### Component-Specific Shadows
+
 - **Dropdown**: Used for dropdown menus and popovers
 - **Button States**: Different shadows for default, hover, and active states
 - **Brand Buttons**: Special shadows for brand-colored buttons
 
 ### State-Based Shadows
+
 - **Rested State**: Default appearance
 - **Hover State**: Enhanced depth when hovering
 - **Active State**: Pressed appearance
@@ -24,13 +26,13 @@ Our shadow system is designed to create visual hierarchy and depth in the interf
 ## Usage Examples
 
 ### Dropdowns and Popovers
+
 ```tsx
-<div className="shadow-dropdown">
-  Dropdown Content
-</div>
+<div className="shadow-dropdown">Dropdown Content</div>
 ```
 
 ### Solid Gray Buttons
+
 ```tsx
 <button className="shadow-solid-gray-rested hover:shadow-solid-gray-hover active:shadow-solid-gray-active">
   Solid Gray Button
@@ -38,6 +40,7 @@ Our shadow system is designed to create visual hierarchy and depth in the interf
 ```
 
 ### Outline Buttons
+
 ```tsx
 <button className="shadow-outline-gray-rested hover:shadow-outline-gray-hover active:shadow-outline-gray-active">
   Outline Button
@@ -45,6 +48,7 @@ Our shadow system is designed to create visual hierarchy and depth in the interf
 ```
 
 ### Brand Buttons
+
 ```tsx
 <button className="shadow-button-solid-brand-default hover:shadow-button-solid-brand-hover active:shadow-button-solid-brand-active">
   Brand Button

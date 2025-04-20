@@ -16675,6 +16675,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/gsap@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@types/gsap@npm:3.0.0"
+  dependencies:
+    gsap: "*"
+  checksum: dae482196e21b65bdfae927d6794b2918325f42cd31d88989e0d09373f91412d315ff4ceb11e93ac13068aa44bf5e99dcfdf6b3465112f0522c630bffcdde116
+  languageName: node
+  linkType: hard
+
 "@types/hast@npm:^2.0.0":
   version: 2.3.4
   resolution: "@types/hast@npm:2.3.4"
@@ -20878,6 +20887,7 @@ __metadata:
     "@snaplet/copycat": ^4.1.0
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^16.0.1
+    "@types/gsap": ^3.0.0
     "@vercel/functions": ^1.4.0
     "@vitest/ui": ^2.1.1
     c8: ^7.13.0
@@ -20885,6 +20895,7 @@ __metadata:
     city-timezones: ^1.2.1
     dotenv-checker: ^1.1.5
     eslint: ^8.34.0
+    gsap: ^3.12.7
     husky: ^8.0.0
     i18n-unused: ^0.13.0
     jest-diff: ^29.5.0
@@ -28224,6 +28235,13 @@ __metadata:
     section-matter: ^1.0.0
     strip-bom-string: ^1.0.0
   checksum: 37717bd424344487d655392251ce8d8878a1275ee087003e61208fba3bfd59cbb73a85b2159abf742ae95e23db04964813fdc33ae18b074208428b2528205222
+  languageName: node
+  linkType: hard
+
+"gsap@npm:*, gsap@npm:^3.12.7":
+  version: 3.12.7
+  resolution: "gsap@npm:3.12.7"
+  checksum: 15f5da56d02f04be8eb4b58cb733fbd71619647608c0854717697da8b1922a5ce4ea5487cba0c66f428aa645247e143e462bec885f8470725c2c9ab393247e25
   languageName: node
   linkType: hard
 

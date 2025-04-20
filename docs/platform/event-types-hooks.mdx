@@ -3,7 +3,10 @@ title: Event types hooks
 description: Overview of all the hooks associated with event types.
 ---
 
-<Note>In order to create a team event type, you need to have an Essentials plan or above. Additionally, you also need to be a team admin or owner.</Note>
+<Note>
+  In order to create a team event type, you need to have an Essentials plan or above. Additionally, you also
+  need to be a team admin or owner.
+</Note>
 
 ### 1. `useEventTypes`
 
@@ -23,12 +26,14 @@ export default function EventTypes({ username }: { username: string }) {
       {!isLoadingEvents && !eventTypes && <p>No event types found</p>}
       {!isLoadingEvents &&
         eventTypes &&
-        (Boolean(eventTypes?.length)) &&
+        Boolean(eventTypes?.length) &&
         eventTypes?.map((event) => {
-            return (
-                <div key={event.id}><h1>Event: {event.slug}</h1></div>
-            );
-       })}
+          return (
+            <div key={event.id}>
+              <h1>Event: {event.slug}</h1>
+            </div>
+          );
+        })}
     </>
   );
 }
@@ -44,7 +49,11 @@ Below code snippet shows how to use the useTeamEventTypes hook to fetch the even
 import { useTeamEventTypes } from "@calcom/atoms";
 
 export default function TeamEventTypes({ id }: { id: number }) {
-  const { isLoading: isLoadingTeamEvents, data: teamEventTypes, refetch: refetchTeamEvents } = useTeamEventTypes(id);
+  const {
+    isLoading: isLoadingTeamEvents,
+    data: teamEventTypes,
+    refetch: refetchTeamEvents,
+  } = useTeamEventTypes(id);
 
   return (
     <>
@@ -52,18 +61,20 @@ export default function TeamEventTypes({ id }: { id: number }) {
       {!isLoadingTeamEvents && !teamEventTypes && <p>No team events found</p>}
       {!isLoadingTeamEvents &&
         teamEventTypes &&
-        (Boolean(teamEventTypes?.length)) &&
+        Boolean(teamEventTypes?.length) &&
         teamEventTypes?.map((event) => {
-            return (
-                <div key={event.id}><h1>Team event: {event.slug}</h1></div>
-            );
-       })}
+          return (
+            <div key={event.id}>
+              <h1>Team event: {event.slug}</h1>
+            </div>
+          );
+        })}
     </>
   );
 }
 ```
 
-### 3. `useEventTypeById` 
+### 3. `useEventTypeById`
 
 The useEventTypeById returns data for a specific event type, provided you pass in the correct event type id. This hook is useful when you need to display or manage a specific event type.
 
@@ -92,7 +103,7 @@ export default function EventType({ id }: { id: number }) {
 
 ### 4. `useCreateEventType`
 
-The useCreateEventType hook allows you to create a new event type. This hook returns a mutation function that handles the event type creation process. The mutation function accepts an object with the following properties: ***lengthInMinutes*** which is the length of the event in minutes, ***title*** which is the title of the event, ***slug*** which is the slug of the event, and ***description*** which is the description of the event.
+The useCreateEventType hook allows you to create a new event type. This hook returns a mutation function that handles the event type creation process. The mutation function accepts an object with the following properties: **_lengthInMinutes_** which is the length of the event in minutes, **_title_** which is the title of the event, **_slug_** which is the slug of the event, and **_description_** which is the description of the event.
 
 Below code snippet shows how to use the useCreateEventType hook to setup an event type.
 
@@ -111,7 +122,7 @@ export default function CreateEventType() {
 
   return (
     <>
-      <button 
+      <button
         disabled={isPending}
         onClick={() => {
           createEventType({
@@ -119,18 +130,18 @@ export default function CreateEventType() {
             title: "Coffee chat",
             slug: "coffee-chat",
             description: "Quick chat about coffee and life in general!",
-          })
+          });
         }}>
         Create event type
       </button>
     </>
   );
-} 
+}
 ```
 
 ### 5. `useCreateTeamEventType`
 
-The useCreateTeamEventType hook allows you to create a new team event type. This hook returns a mutation function that handles the event type creation process. The mutation function accepts an object with the following properties: ***lengthInMinutes*** which is the length of the event in minutes, ***title*** which is the title of the event, ***slug*** which is the slug of the event, ***description*** which is the description of the event, schedulingType which can be either ***COLLECTIVE***, ***ROUND_ROBIN*** or ***MANAGED***, ***hosts*** which is an array of hosts for the event and the ***teamId*** which is the id of the team.
+The useCreateTeamEventType hook allows you to create a new team event type. This hook returns a mutation function that handles the event type creation process. The mutation function accepts an object with the following properties: **_lengthInMinutes_** which is the length of the event in minutes, **_title_** which is the title of the event, **_slug_** which is the slug of the event, **_description_** which is the description of the event, schedulingType which can be either **_COLLECTIVE_**, **_ROUND_ROBIN_** or **_MANAGED_**, **_hosts_** which is an array of hosts for the event and the **_teamId_** which is the id of the team.
 
 Below code snippet shows how to use the useCreateTeamEventType hook to setup a team event type.
 
@@ -149,7 +160,7 @@ export default function CreateTeamEventType() {
 
   return (
     <>
-      <button 
+      <button
         disabled={isPending}
         onClick={() => {
           createTeamEventType({
@@ -158,13 +169,13 @@ export default function CreateTeamEventType() {
             slug: "daily-standup",
             description: "Daily standup for the team",
             schedulingType: "COLLECTIVE",
-            hosts: [{"userId": 1456}, {"userId": 2357}],
+            hosts: [{ userId: 1456 }, { userId: 2357 }],
             teamId: 1234,
-          })
+          });
         }}>
         Create team event type
       </button>
     </>
   );
-} 
+}
 ```

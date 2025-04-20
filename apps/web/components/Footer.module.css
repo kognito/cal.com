@@ -1,0 +1,84 @@
+/* app/components/Footer.module.css */
+.footer {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: left;
+  padding: 4rem 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.boxed-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.blurb {
+  flex: 1;
+  text-align: left;
+}
+
+.contactInfo {
+  flex: 1;
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  ._blurb_,
+  ._contactInfo_ {
+    flex: 1 0 100%; /* Make them full width on mobile */
+  }
+}
+
+.logo {
+  display: inline-block;
+}
+
+.contactInfo address {
+  font-style: normal;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.socialIcons a {
+  margin: 0 10px;
+  color: white;
+}
+
+.socialIcons a:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 600px) {
+  .socialIcons {
+    justify-content: end;
+  }
+  .socialIcons svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.footerCopy {
+  margin-top: 20px;
+  width: 100%;
+  text-align: right;
+}

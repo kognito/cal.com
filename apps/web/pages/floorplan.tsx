@@ -5,15 +5,7 @@ import { useState } from "react";
 
 import styles from "./floorplan.module.css";
 
-const bookedDesks = [
-  "h2",
-  "zoom-room",
-  ...Array.from({ length: 14 }, (_, i) => `p${i + 1}`).filter(
-    (id) => !["p6", "p8", "p10", "p13"].includes(id)
-  ),
-  "n1",
-  "n2",
-]; // Simulated booked desks
+const bookedDesks = [" "]; // Simulated booked desks
 
 const deskInfo = [
   {
@@ -116,6 +108,7 @@ const deskInfo = [
     photo: "/desks/perch1.jpg",
     blurb:
       "Book a desk in the Perch area.\n\nThis space is on the upper floor and your booking includes use of fibre internet, kitchenette, communal areas and bathroom facilities. Print access can be arranged on request. Access is during working hours for the day of booking.",
+    status: "disabled",
   },
   {
     id: "p5",
@@ -199,6 +192,7 @@ const deskInfo = [
     photo: "/desks/perch2.jpg",
     blurb:
       "Book a desk in the Perch area.\n\nThis space is on the upper floor and your booking includes use of fibre internet, kitchenette, communal areas and bathroom facilities. Print access can be arranged on request. Access is during working hours for the day of booking.",
+    status: "disabled",
   },
   {
     id: "p13",
@@ -219,6 +213,7 @@ const deskInfo = [
     photo: "/desks/perch2.jpg",
     blurb:
       "Book a desk in the Perch area.\n\nThis space is on the upper floor and your booking includes use of fibre internet, kitchenette, communal areas and bathroom facilities. Print access can be arranged on request. Access is during working hours for the day of booking.",
+    status: "disabled",
   },
 
   // Nest offices
@@ -440,14 +435,18 @@ const Floorplan = () => {
         }
         @media (max-width: 768px) {
           .floorplan-wrapper {
-            transform: rotate(90deg);
-            transform-origin: center center;
-            width: 100vh;
-            height: 100vw;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+          }
+
+          .floorplan-wrapper > div:first-child {
+            transform: rotate(90deg);
+            transform-origin: center center;
+            height: 160vw; /* try pushing this further */
+            width: auto;
+            max-height: 95vh;
           }
         }
       `}</style>

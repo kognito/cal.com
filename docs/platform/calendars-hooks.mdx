@@ -34,7 +34,7 @@ export default function ConnectedCalendars() {
 
 ### 2. `useAddSelectedCalendar`
 
-The useAddSelectedCalendar lets you add a calendar to check for conflicts to prevent double bookings. This hook returns a mutation function that handles the addition process. The mutation function accepts an object with the following properties: ***credentialId*** which is the credential id of the calendar to add, ***integration*** which is the name of the integration, and ***externalId*** which is the external id of the calendar. In order to obtain those credentials, you can use the ***useConnectedCalendars*** hook.
+The useAddSelectedCalendar lets you add a calendar to check for conflicts to prevent double bookings. This hook returns a mutation function that handles the addition process. The mutation function accepts an object with the following properties: **_credentialId_** which is the credential id of the calendar to add, **_integration_** which is the name of the integration, and **_externalId_** which is the external id of the calendar. In order to obtain those credentials, you can use the **_useConnectedCalendars_** hook.
 
 Below code snippet shows how to use the useAddSelectedCalendar hook to add a specific calendar to check for conflicts.
 
@@ -53,23 +53,24 @@ export default function AddSelectedCalendar() {
 
   return (
     <>
-      <button onClick={() => {
+      <button
+        onClick={() => {
           addSelectedCalendar({
             credentialId: 123,
             integration: "google_calendar",
             externalId: "613f23c27149a2796f2c155bfe79203a135@group.calendar.google.com",
-          })
+          });
         }}>
         Add selected calendar
       </button>
     </>
   );
-} 
+}
 ```
 
 ### 3. `useRemoveSelectedCalendar`
 
-The useRemoveSelectedCalendar lets you remove a calendar to check for conflicts to prevent double bookings. This hook returns a mutation function that handles the addition process. The mutation function accepts an object with the following properties: ***credentialId*** which is the credential id of the calendar to add, ***integration*** which is the name of the integration, and ***externalId*** which is the external id of the calendar. In order to obtain those credentials, you can use the ***useConnectedCalendars*** hook.
+The useRemoveSelectedCalendar lets you remove a calendar to check for conflicts to prevent double bookings. This hook returns a mutation function that handles the addition process. The mutation function accepts an object with the following properties: **_credentialId_** which is the credential id of the calendar to add, **_integration_** which is the name of the integration, and **_externalId_** which is the external id of the calendar. In order to obtain those credentials, you can use the **_useConnectedCalendars_** hook.
 
 Below code snippet shows how to use the useRemoveSelectedCalendar hook to remove a specific calendar to check for conflicts.
 
@@ -88,23 +89,24 @@ export default function RemoveSelectedCalendar() {
 
   return (
     <>
-      <button onClick={() => {
+      <button
+        onClick={() => {
           removeSelectedCalendar({
             credentialId: 987,
             integration: "office365_calendar",
             externalId: "AQMkADAwATM3AADfEpy7w2EpEOi_xwYa7A_cQcACgtJE7RnHEeyisVq2Eq2ENs2gAAAhFDAAAA",
-          })
+          });
         }}>
         Remove selected calendar
       </button>
     </>
   );
-} 
+}
 ```
 
 ### 4. `useDeleteCalendarCredentials`
 
-The useDeleteCalendarCredentials hook allows you to delete a users calendar credentials. This hook returns a mutation function which handles the deletion process. The mutation function accepts an object with the following properties: ***id*** which is the credential id, and ***calendar*** is the name of the calendar which can be either google, office365 or apple.
+The useDeleteCalendarCredentials hook allows you to delete a users calendar credentials. This hook returns a mutation function which handles the deletion process. The mutation function accepts an object with the following properties: **_id_** which is the credential id, and **_calendar_** is the name of the calendar which can be either google, office365 or apple.
 
 Below code snippet shows how to use the useDeleteCalendarCredentials hook to manage deletion of calendar credentials.
 
@@ -123,11 +125,12 @@ export default function DeleteUserCalendar() {
 
   return (
     <>
-      <button onClick={async () => {
+      <button
+        onClick={async () => {
           await deleteCalendarCredentials({
             calendar: "google",
             id: 123,
-          })
+          });
         }}>
         Delete calendar
       </button>

@@ -48,12 +48,14 @@ export default function UserTeams() {
       {!isLoadingTeams && !teams && <p>No teams found</p>}
       {!isLoadingTeams &&
         teams &&
-        (Boolean(teams?.length)) &&
+        Boolean(teams?.length) &&
         teams?.map((team) => {
-            return (
-                <div key={team.id}><h1>Team name: {team.name}</h1></div>
-            );
-       })}
+          return (
+            <div key={team.id}>
+              <h1>Team name: {team.name}</h1>
+            </div>
+          );
+        })}
     </>
   );
 }

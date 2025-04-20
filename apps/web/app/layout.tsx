@@ -11,6 +11,8 @@ import { NotificationSoundHandler } from "@calcom/web/components/notification-so
 
 import { buildLegacyRequest } from "@lib/buildLegacyCtx";
 
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import "../styles/globals.css";
 import { AppRouterI18nProvider } from "./AppRouterI18nProvider";
 import { SpeculationRules } from "./SpeculationRules";
@@ -154,7 +156,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
         <Providers>
           <AppRouterI18nProvider translations={translations} locale={locale} ns={ns}>
-            {children}
+            <Header />
+            <main style={{ paddingTop: "80px" }}>{children}</main>
+            <Footer />
           </AppRouterI18nProvider>
         </Providers>
         {!isEmbed && <NotificationSoundHandler />}

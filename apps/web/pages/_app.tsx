@@ -9,6 +9,8 @@ import { trpc } from "@calcom/trpc/react";
 
 import type { AppProps } from "@lib/app-providers";
 
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import "../styles/globals.css";
 
 function MyApp(props: AppProps) {
@@ -19,7 +21,11 @@ function MyApp(props: AppProps) {
       <WebPushProvider>
         {/* @ts-expect-error FIXME remove this comment when upgrading typescript to v5 */}
         <CacheProvider>
-          {Component.PageWrapper ? <Component.PageWrapper {...props} /> : <Component {...pageProps} />}
+          <Header />
+          <main style={{ paddingTop: "80px" }}>
+            {Component.PageWrapper ? <Component.PageWrapper {...props} /> : <Component {...pageProps} />}
+          </main>
+          <Footer />
         </CacheProvider>
       </WebPushProvider>
     </SessionProvider>

@@ -79,11 +79,14 @@ $ yarn local
 ```
 
 # watch mode
+
 $ yarn run start:dev
 
 # production mode
+
 $ yarn run start:prod
-```
+
+````
 
 
 
@@ -98,14 +101,14 @@ $ yarn run test
 $ yarn run test:e2e
 
 # e2e tests in watch mode
-$ yarn test:e2e:watch 
+$ yarn test:e2e:watch
 
 # run specific e2e test file in watch mode
 $ yarn test:e2e:watch --testPathPattern=filePath
 
 # test coverage
 $ yarn run test:cov
-```
+````
 
 ## Support
 
