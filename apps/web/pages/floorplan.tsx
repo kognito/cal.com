@@ -19,7 +19,7 @@ const deskInfo = [
   {
     id: "h1",
     name: "Desk H1",
-    link: "/admin/h1-desk",
+    link: "/balanceproject/h1-desk",
     top: "72.4%",
     left: "52.2%",
     photo: "/desks/h1.png",
@@ -29,7 +29,7 @@ const deskInfo = [
   {
     id: "h2",
     name: "Desk H2",
-    link: "/admin/h2-desk",
+    link: "/balanceproject/h2-desk",
     top: "86.6%",
     left: "52.2%",
     photo: "/desks/h1.png",
@@ -39,7 +39,7 @@ const deskInfo = [
   {
     id: "h3",
     name: "Desk H3",
-    link: "/admin/h3-desk",
+    link: "/balanceproject/h3-desk",
     top: "82.9%",
     left: "45.7%",
     photo: "/desks/h1.png",
@@ -49,7 +49,7 @@ const deskInfo = [
   {
     id: "h4",
     name: "Desk H4",
-    link: "/admin/h4-desk",
+    link: "/balanceproject/h4-desk",
     top: "68.7%",
     left: "45.7%",
     photo: "/desks/h1.png",
@@ -59,7 +59,7 @@ const deskInfo = [
   {
     id: "meeting-room",
     name: "Meeting Room",
-    link: "/admin/meeting-room",
+    link: "/balanceproject/meeting-room",
     top: "39.1%",
     left: "30.2%",
     photo: "/rooms/meeting-room.png",
@@ -69,7 +69,7 @@ const deskInfo = [
   {
     id: "zoom-room",
     name: "Zoom Room",
-    link: "/admin/zoom-room",
+    link: "/balanceproject/zoom-room",
     top: "10.9%",
     left: "2%",
     photo: "/rooms/zoom-room.png",
@@ -80,7 +80,7 @@ const deskInfo = [
   {
     id: "p1",
     name: "Perch Desk 1",
-    link: "/admin/perch-1",
+    link: "/balanceproject/perch-1",
     top: "9.3%",
     left: "25.5%",
     photo: "/desks/perch1.jpg",
@@ -90,7 +90,7 @@ const deskInfo = [
   {
     id: "p2",
     name: "Perch Desk 2",
-    link: "/admin/perch-2",
+    link: "/balanceproject/perch-2",
     top: "9.2%",
     left: "18.1%",
     photo: "/desks/perch1.jpg",
@@ -100,7 +100,7 @@ const deskInfo = [
   {
     id: "p3",
     name: "Perch Desk 3",
-    link: "/admin/perch-3",
+    link: "/balanceproject/perch-3",
     top: "26%",
     left: "23.9%",
     photo: "/desks/perch1.jpg",
@@ -110,7 +110,7 @@ const deskInfo = [
   {
     id: "p4",
     name: "Perch Desk 4",
-    link: "/admin/perch-4",
+    link: "/balanceproject/perch-4",
     top: "46.5%",
     left: "23.9%",
     photo: "/desks/perch1.jpg",
@@ -120,7 +120,7 @@ const deskInfo = [
   {
     id: "p5",
     name: "Perch Desk 5",
-    link: "/admin/perch-5",
+    link: "/balanceproject/perch-5",
     top: "26%",
     left: "18.6%",
     photo: "/desks/perch1.jpg",
@@ -130,7 +130,7 @@ const deskInfo = [
   {
     id: "p6",
     name: "Perch Desk 6",
-    link: "/admin/perch-6",
+    link: "/balanceproject/perch-6",
     top: "46.5%",
     left: "18.6%",
     photo: "/desks/perch1.jpg",
@@ -140,7 +140,7 @@ const deskInfo = [
   {
     id: "p7",
     name: "Perch Desk 7",
-    link: "/admin/perch-7",
+    link: "/balanceproject/perch-7",
     top: "9.9%",
     left: "10.9%",
     photo: "/desks/perch1.jpg",
@@ -151,7 +151,7 @@ const deskInfo = [
   {
     id: "p8",
     name: "Perch Desk 8",
-    link: "/admin/perch-8",
+    link: "/balanceproject/perch-8",
     top: "27%",
     left: "10.9%",
     photo: "/desks/perch1.jpg",
@@ -161,7 +161,7 @@ const deskInfo = [
   {
     id: "p9",
     name: "Perch Desk 9",
-    link: "/admin/perch-9",
+    link: "/balanceproject/perch-9",
     top: "56.5%",
     left: "7.8%",
     photo: "/desks/perch2.jpg",
@@ -172,7 +172,7 @@ const deskInfo = [
   {
     id: "p10",
     name: "Perch Desk 10",
-    link: "/admin/perch-10",
+    link: "/balanceproject/perch-10",
     top: "74%",
     left: "10.8%",
     photo: "/desks/perch2.jpg",
@@ -182,7 +182,7 @@ const deskInfo = [
   {
     id: "p11",
     name: "Perch Desk 11",
-    link: "/admin/perch-11",
+    link: "/balanceproject/perch-11",
     top: "90%",
     left: "10.8%",
     photo: "/desks/perch2.jpg",
@@ -193,7 +193,7 @@ const deskInfo = [
   {
     id: "p12",
     name: "Perch Desk 12 (+ screen)",
-    link: "/admin/perch-12",
+    link: "/balanceproject/perch-12",
     top: "74%",
     left: "5%",
     photo: "/desks/perch2.jpg",
@@ -203,7 +203,7 @@ const deskInfo = [
   {
     id: "p13",
     name: "Perch Desk 13",
-    link: "/admin/perch-13",
+    link: "/balanceproject/perch-13",
     top: "90%",
     left: "5%",
     photo: "/desks/perch2.jpg",
@@ -213,7 +213,7 @@ const deskInfo = [
   {
     id: "p14",
     name: "Perch Desk 14",
-    link: "/admin/perch-14",
+    link: "/balanceproject/perch-14",
     top: "47.5%",
     left: "3.5%",
     photo: "/desks/perch2.jpg",
@@ -225,7 +225,7 @@ const deskInfo = [
   {
     id: "n1",
     name: "Nest Office 1",
-    link: "/admin/n1",
+    link: "/balanceproject/n1",
     top: "90%",
     left: "21%",
     photo: "/rooms/nest.png",
@@ -235,7 +235,7 @@ const deskInfo = [
   {
     id: "n2",
     name: "Nest Office 2",
-    link: "/admin/n2",
+    link: "/balanceproject/n2",
     top: "90%",
     left: "37.7%",
     photo: "/rooms/nest.png",
@@ -245,7 +245,7 @@ const deskInfo = [
   {
     id: "n3",
     name: "Nest Office 3",
-    link: "/admin/n3",
+    link: "/balanceproject/n3",
     top: "90%",
     left: "92.7%",
     photo: "/rooms/nest.png",
