@@ -7,6 +7,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState, useRef } from "react";
 
+import { useLocale } from "@calcom/lib/hooks/useLocale";
+
 import styles from "./Header.module.css";
 
 // components/Header.tsx
@@ -31,7 +33,30 @@ import styles from "./Header.module.css";
 
 // components/Header.tsx
 
+// components/Header.tsx
+
+// components/Header.tsx
+
+// components/Header.tsx
+
+// components/Header.tsx
+
+// components/Header.tsx
+
+// components/Header.tsx
+
+// components/Header.tsx
+
+// components/Header.tsx
+
+// components/Header.tsx
+
+// components/Header.tsx
+
+// components/Header.tsx
+
 const Header: React.FC = () => {
+  const { t } = useLocale();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isOnHeroSection, setIsOnHeroSection] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);

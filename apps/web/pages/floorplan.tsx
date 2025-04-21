@@ -1,9 +1,19 @@
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
 import styles from "./floorplan.module.css";
+
+export const getStaticProps = async ({ locale }: { locale: string }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+};
 
 const bookedDesks = [" "]; // Simulated booked desks
 
@@ -249,6 +259,7 @@ const deskInfo = [
 ];
 
 const Floorplan = () => {
+  const { t } = useTranslation("common");
   type DeskInfo = (typeof deskInfo)[number];
   const [selectedDesk, setSelectedDesk] = useState<DeskInfo | null>(null);
   const [hovered, setHovered] = useState<string | null>(null);
